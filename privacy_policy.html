@@ -1,160 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Pose Master</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            color: #1a1a2e;
-            background: #f8f9fa;
-            line-height: 1.7;
-        }
-        .header {
-            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-            color: white;
-            padding: 48px 20px;
-            text-align: center;
-        }
-        .header h1 {
-            font-size: 2.25rem;
-            font-weight: 800;
-            margin-bottom: 8px;
-        }
-        .header p {
-            opacity: 0.85;
-            font-size: 1rem;
-        }
-        .container {
-            max-width: 780px;
-            margin: 0 auto;
-            padding: 48px 20px;
-        }
-        .section {
-            background: white;
-            border-radius: 12px;
-            padding: 32px;
-            margin-bottom: 24px;
-            box-shadow: 0 1px 6px rgba(0,0,0,0.05);
-            border: 1px solid #e5e7eb;
-        }
-        .section h2 {
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: #6366f1;
-            margin-bottom: 16px;
-        }
-        .section p, .section li {
-            color: #374151;
-            font-size: 0.95rem;
-            margin-bottom: 12px;
-        }
-        .section ul {
-            padding-left: 24px;
-        }
-        .section ul li {
-            margin-bottom: 8px;
-        }
-        .section strong {
-            color: #1a1a2e;
-        }
-        .footer {
-            background: #1a1a2e;
-            color: #9ca3af;
-            padding: 32px 20px;
-            text-align: center;
-        }
-        .footer a {
-            color: #8b5cf6;
-            text-decoration: none;
-        }
-        .footer a:hover {
-            text-decoration: underline;
-        }
-        @media (max-width: 600px) {
-            .container { padding: 24px 16px; }
-            .section { padding: 24px 20px; }
-            .header h1 { font-size: 1.75rem; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pose Master - AI Pose Generator</title>
+  <meta name="description" content="Transform your photos into stunning AI-generated pose variations with Pose Master.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0f0f23;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid #3a3a5c;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 24px;
+      font-weight: 800;
+      color: #ffffff;
+      text-decoration: none;
+    }
+    .logo-icon {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+    .nav-links a {
+      color: #a0a0b0;
+      text-decoration: none;
+      margin-left: 32px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+    .hero {
+      padding: 100px 0 80px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 56px;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      background: linear-gradient(135deg, #ffffff, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: 20px;
+      color: #a0a0b0;
+      max-width: 560px;
+      margin: 0 auto 40px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      color: #ffffff;
+      padding: 16px 36px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(99, 102, 241, 0.3);
+    }
+    .features {
+      padding: 80px 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+    }
+    .feature-card {
+      background: #1a1a2e;
+      border: 1px solid #3a3a5c;
+      border-radius: 20px;
+      padding: 40px 32px;
+      transition: border-color 0.2s;
+    }
+    .feature-card:hover {
+      border-color: #6366f1;
+    }
+    .feature-icon {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 24px;
+    }
+    .feature-card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .feature-card p {
+      color: #a0a0b0;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    .how-it-works {
+      padding: 80px 0;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      font-weight: 800;
+      margin-bottom: 60px;
+    }
+    .steps {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    .step {
+      text-align: center;
+      max-width: 220px;
+    }
+    .step-number {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 700;
+      margin: 0 auto 20px;
+    }
+    .step h4 {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .step p {
+      color: #a0a0b0;
+      font-size: 14px;
+    }
+    footer {
+      border-top: 1px solid #3a3a5c;
+      padding: 48px 0;
+      text-align: center;
+      color: #6b6b80;
+    }
+    footer a {
+      color: #a0a0b0;
+      text-decoration: none;
+      margin: 0 16px;
+      font-size: 14px;
+    }
+    footer a:hover {
+      color: #ffffff;
+    }
+    footer .email {
+      margin-top: 16px;
+      font-size: 14px;
+    }
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 36px; }
+      .nav-links { display: none; }
+      .steps { flex-direction: column; align-items: center; }
+    }
+  </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Privacy Policy</h1>
-        <p>Pose Master — Last updated: March 2025</p>
-    </div>
-
+  <header>
     <div class="container">
-        <div class="section">
-            <h2>Introduction</h2>
-            <p>Pose Master ("we", "our", "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application.</p>
+      <nav>
+        <a href="#" class="logo">
+          <div class="logo-icon">✨</div>
+          Pose Master
+        </a>
+        <div class="nav-links">
+          <a href="#features">Features</a>
+          <a href="#how-it-works">How It Works</a>
+          <a href="privacy_policy.html">Privacy Policy</a>
         </div>
-
-        <div class="section">
-            <h2>Information We Collect</h2>
-            <p><strong>Device Identifier:</strong> We generate a unique device ID to identify your account and track your credit balance. This ID is randomly generated and is not tied to any personal information.</p>
-            <p><strong>Photos:</strong> Photos you select for pose generation are sent to our secure servers for processing. These images are <strong>not stored</strong> on our servers after the generation is complete.</p>
-            <p><strong>Purchase Information:</strong> When you purchase credits, we record the product ID and purchase token for verification purposes. We do not collect or store payment card details — all payments are processed through Google Play.</p>
-        </div>
-
-        <div class="section">
-            <h2>How We Use Your Information</h2>
-            <ul>
-                <li>To manage your credit balance and account</li>
-                <li>To process pose generation requests</li>
-                <li>To verify and fulfill in-app purchases</li>
-                <li>To maintain app functionality and performance</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Data Storage & Security</h2>
-            <p>Your device ID and credit balance are stored securely on our servers. All communication between the app and our servers is encrypted using HTTPS/TLS.</p>
-            <p>Photos uploaded for generation are processed in memory and are <strong>not persisted to disk</strong> on our servers. Generated images are returned directly to your device.</p>
-        </div>
-
-        <div class="section">
-            <h2>Third-Party Services</h2>
-            <p><strong>Google Play Billing:</strong> We use Google Play Billing for in-app purchases. Google's own privacy policy applies to payment processing. We do not have access to your payment method details.</p>
-            <p><strong>OpenAI API:</strong> We use OpenAI's image generation API to create pose variations. Uploaded images are sent to OpenAI for processing under their data usage policies. OpenAI does not use customer API data to train their models.</p>
-        </div>
-
-        <div class="section">
-            <h2>Data Retention</h2>
-            <ul>
-                <li><strong>Device ID & Credits:</strong> Retained as long as your account is active</li>
-                <li><strong>Uploaded Photos:</strong> Not stored after generation completes</li>
-                <li><strong>Purchase Records:</strong> Retained for transaction verification</li>
-                <li><strong>Generation Logs:</strong> Anonymized metadata retained for analytics</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Your Rights</h2>
-            <p>You may request deletion of your account and associated data at any time by contacting us at <a href="mailto:sujith81159@gmail.com">sujith81159@gmail.com</a>.</p>
-        </div>
-
-        <div class="section">
-            <h2>Children's Privacy</h2>
-            <p>Pose Master is not intended for children under 13. We do not knowingly collect personal information from children.</p>
-        </div>
-
-        <div class="section">
-            <h2>Changes to This Policy</h2>
-            <p>We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an updated revision date.</p>
-        </div>
-
-        <div class="section">
-            <h2>Contact Us</h2>
-            <p>If you have any questions about this Privacy Policy or your data, please contact us at:</p>
-            <p><strong>Email:</strong> <a href="mailto:sujith81159@gmail.com">sujith81159@gmail.com</a></p>
-        </div>
+      </nav>
     </div>
+  </header>
 
-    <div class="footer">
-        <p>&copy; 2025 Pose Master. All rights reserved. | <a href="/index.html">Home</a></p>
+  <section class="hero">
+    <div class="container">
+      <h1>AI-Powered Pose Generation</h1>
+      <p>Transform any photo into stunning, realistic pose variations using advanced AI. Perfect for photographers, models, and creatives.</p>
+      <a href="#" class="btn">Get it on Google Play</a>
     </div>
+  </section>
+
+  <section class="features" id="features">
+    <div class="container">
+      <div class="feature-card">
+        <div class="feature-icon">📸</div>
+        <h3>Photo to Poses</h3>
+        <p>Upload any photo and generate multiple AI-powered pose variations in seconds. Keep the same person with entirely new poses.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎨</div>
+        <h3>Background Preserved</h3>
+        <p>Our AI intelligently maintains the original background while transforming the subject's pose naturally and realistically.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Fast & Secure</h3>
+        <p>Your photos are processed securely and never stored on our servers. Get results quickly with our optimized AI pipeline.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <h2 class="section-title">How It Works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h4>Select Photo</h4>
+          <p>Take a photo or upload from your gallery</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h4>Choose Gender</h4>
+          <p>Select male or female for the pose style</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h4>Generate</h4>
+          <p>AI creates a new pose in seconds</p>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <h4>Save & Share</h4>
+          <p>Download to gallery or share directly</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <a href="privacy_policy.html">Privacy Policy</a>
+      <a href="mailto:sujith8119@gmail.com">Contact Support</a>
+      <div class="email">Support: sujith8119@gmail.com</div>
+      <div style="margin-top: 12px; font-size: 13px;">&copy; 2025 Pose Master. All rights reserved.</div>
+    </div>
+  </footer>
 </body>
 </html>
